@@ -1,0 +1,648 @@
+{
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "basePath": "/_ah/api/connectapi/v1/",
+ "baseUrl": "https://${app.id}.appspot.com/_ah/api/connectapi/v1/",
+ "batchPath": "batch",
+ "description": "Test REST api for the connect app",
+ "discoveryVersion": "v1",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "id": "connectapi:v1",
+ "kind": "discovery#restDescription",
+ "methods": {
+  "createClient": {
+   "httpMethod": "POST",
+   "id": "connectapi.createClient",
+   "path": "createClient",
+   "request": {
+    "$ref": "ClientForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Client"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createProfile": {
+   "httpMethod": "POST",
+   "id": "connectapi.createProfile",
+   "path": "createProfile",
+   "request": {
+    "$ref": "AboutMeForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Profile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createService": {
+   "httpMethod": "POST",
+   "id": "connectapi.createService",
+   "path": "createService",
+   "request": {
+    "$ref": "ServiceOfferedForm",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ServiceOffered"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createServiceReq": {
+   "httpMethod": "POST",
+   "id": "connectapi.createServiceReq",
+   "parameters": {
+    "webSafeServicePeopleKeys": {
+     "location": "query",
+     "repeated": true,
+     "required": true,
+     "type": "string"
+    },
+    "webSafeClientKey": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "updateServiceReq",
+   "request": {
+    "$ref": "ServiceReqForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ServiceReq"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createTestClient": {
+   "httpMethod": "POST",
+   "id": "connectapi.createTestClient",
+   "parameters": {
+    "webSafeConnectUserKey": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "createTestClient",
+   "request": {
+    "$ref": "ClientForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Client"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createTestProfiles": {
+   "httpMethod": "POST",
+   "id": "connectapi.createTestProfiles",
+   "parameters": {
+    "webSafeConnectUserKey": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "CreateTestProfiles",
+   "request": {
+    "$ref": "AboutMeForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Profile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createTestServices": {
+   "httpMethod": "POST",
+   "id": "connectapi.createTestServices",
+   "parameters": {
+    "webSafeProfileKey": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "createTestServices",
+   "request": {
+    "$ref": "ServiceOfferedForm",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ServiceOffered"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getSpecificService": {
+   "httpMethod": "GET",
+   "id": "connectapi.getSpecificService",
+   "parameters": {
+    "serviceName": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "getSpecificService",
+   "response": {
+    "$ref": "ServiceOfferedCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "queryProfilesByJobTag": {
+   "httpMethod": "GET",
+   "id": "connectapi.queryProfilesByJobTag",
+   "parameters": {
+    "address": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "queryProfilesByJobTag",
+   "response": {
+    "$ref": "ProfileCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "queryProfilesWithinProximity": {
+   "httpMethod": "GET",
+   "id": "connectapi.queryProfilesWithinProximity",
+   "parameters": {
+    "address": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    },
+    "proximity": {
+     "format": "double",
+     "location": "query",
+     "required": true,
+     "type": "number"
+    }
+   },
+   "path": "queryProfilesWithinProximity",
+   "response": {
+    "$ref": "ProfileCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "testqueries": {
+   "httpMethod": "GET",
+   "id": "connectapi.testqueries",
+   "parameters": {
+    "search": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "testqueries",
+   "response": {
+    "$ref": "ProfileCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateClient": {
+   "httpMethod": "POST",
+   "id": "connectapi.updateClient",
+   "parameters": {
+    "updateClient": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "updateClient",
+   "request": {
+    "$ref": "ClientForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Client"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateProfile": {
+   "httpMethod": "POST",
+   "id": "connectapi.updateProfile",
+   "parameters": {
+    "webSafeProfileKey": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "updateProfile",
+   "request": {
+    "$ref": "AboutMeForms",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Profile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateService": {
+   "httpMethod": "POST",
+   "id": "connectapi.updateService",
+   "parameters": {
+    "webSafeServiceOfferedKey": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "updateService",
+   "request": {
+    "$ref": "ServiceOfferedForm",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "ServiceOffered"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ },
+ "name": "connectapi",
+ "parameters": {
+  "alt": {
+   "default": "json",
+   "description": "Data format for the response.",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query",
+   "type": "string"
+  },
+  "fields": {
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query",
+   "type": "string"
+  },
+  "key": {
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query",
+   "type": "string"
+  },
+  "oauth_token": {
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query",
+   "type": "string"
+  },
+  "prettyPrint": {
+   "default": "true",
+   "description": "Returns response with indentations and line breaks.",
+   "location": "query",
+   "type": "boolean"
+  },
+  "quotaUser": {
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query",
+   "type": "string"
+  },
+  "userIp": {
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query",
+   "type": "string"
+  }
+ },
+ "protocol": "rest",
+ "resources": {
+  "connectapi": {
+   "methods": {
+    "getConnectUserFromUser": {
+     "httpMethod": "GET",
+     "id": "connectapi.connectapi.getConnectUserFromUser",
+     "path": "connectuser",
+     "response": {
+      "$ref": "ConnectUser"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "getProfileFromConnectUser": {
+     "httpMethod": "GET",
+     "id": "connectapi.connectapi.getProfileFromConnectUser",
+     "path": "profile",
+     "request": {
+      "$ref": "ConnectUser",
+      "parameterName": "resource"
+     },
+     "response": {
+      "$ref": "Profile"
+     },
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    }
+   }
+  }
+ },
+ "rootUrl": "https://${app.id}.appspot.com/_ah/api/",
+ "schemas": {
+  "AboutMe": {
+   "id": "AboutMe",
+   "properties": {
+    "finishTime": {
+     "format": "date-time",
+     "type": "string"
+    },
+    "literalAddress": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "phoneNumber": {
+     "type": "string"
+    },
+    "postCode": {
+     "type": "string"
+    },
+    "profileDescription": {
+     "type": "string"
+    },
+    "profilePicUrl": {
+     "type": "string"
+    },
+    "serviceType": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "startTime": {
+     "format": "date-time",
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "AboutMeForms": {
+   "id": "AboutMeForms",
+   "properties": {
+    "finishTime": {
+     "type": "string"
+    },
+    "literalAddress": {
+     "type": "string"
+    },
+    "phoneNumber": {
+     "type": "string"
+    },
+    "postCode": {
+     "type": "string"
+    },
+    "profileDescription": {
+     "type": "string"
+    },
+    "profileName": {
+     "type": "string"
+    },
+    "serviceType": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "startTime": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "Client": {
+   "id": "Client",
+   "properties": {
+    "email": {
+     "type": "string"
+    },
+    "literalAddress": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "phoneNumber": {
+     "type": "string"
+    },
+    "postCode": {
+     "type": "string"
+    },
+    "webSafeClientKey": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "ClientForms": {
+   "id": "ClientForms",
+   "properties": {
+    "email": {
+     "type": "string"
+    },
+    "literalAddress": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "phoneNumber": {
+     "type": "string"
+    },
+    "postCode": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "ConnectUser": {
+   "id": "ConnectUser",
+   "properties": {
+    "email": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "Profile": {
+   "id": "Profile",
+   "properties": {
+    "aboutMe": {
+     "$ref": "AboutMe"
+    },
+    "id": {
+     "format": "int64",
+     "type": "string"
+    },
+    "webSafeProfileKey": {
+     "type": "string"
+    },
+    "webSafeRequestKeys": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    }
+   },
+   "type": "object"
+  },
+  "ProfileCollection": {
+   "id": "ProfileCollection",
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "Profile"
+     },
+     "type": "array"
+    }
+   },
+   "type": "object"
+  },
+  "ServiceOffered": {
+   "id": "ServiceOffered",
+   "properties": {
+    "serviceCategory": {
+     "type": "string"
+    },
+    "serviceDescription": {
+     "type": "string"
+    },
+    "serviceName": {
+     "type": "string"
+    },
+    "servicePrice": {
+     "format": "double",
+     "type": "number"
+    },
+    "webSafeServiceOfferedKey": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "ServiceOfferedCollection": {
+   "id": "ServiceOfferedCollection",
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "ServiceOffered"
+     },
+     "type": "array"
+    }
+   },
+   "type": "object"
+  },
+  "ServiceOfferedForm": {
+   "id": "ServiceOfferedForm",
+   "properties": {
+    "serviceCategory": {
+     "type": "string"
+    },
+    "serviceDescription": {
+     "type": "string"
+    },
+    "serviceName": {
+     "type": "string"
+    },
+    "servicePrice": {
+     "format": "double",
+     "type": "number"
+    }
+   },
+   "type": "object"
+  },
+  "ServiceReq": {
+   "id": "ServiceReq",
+   "properties": {
+    "dateOfRequest": {
+     "type": "string"
+    },
+    "responseDeadlineTime": {
+     "type": "string"
+    },
+    "serviceDescription": {
+     "type": "string"
+    },
+    "serviceStarDay": {
+     "type": "string"
+    },
+    "webSafeServicePeopleKeys": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "webSafeServiceReqKey": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "ServiceReqForms": {
+   "id": "ServiceReqForms",
+   "properties": {
+    "serviceDescription": {
+     "type": "string"
+    },
+    "serviceStartDay": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  }
+ },
+ "servicePath": "connectapi/v1/",
+ "version": "v1"
+}
