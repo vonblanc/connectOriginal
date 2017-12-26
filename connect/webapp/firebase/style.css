@@ -1,0 +1,149 @@
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+	
+margin: 1 auto;
+
+width: 400px;
+
+height: 300px;	
+
+padding: 1em;
+
+border:  1px solid #CCC;
+
+border-radius: 0.1em;
+
+}
+
+h2 {
+	text-align: center;
+	font: 1em ssans-serif;
+	
+}
+
+form div + div{
+	
+	margin-top: 1em;
+	
+	
+}
+
+label {
+
+  /* To make sure that all labels have the same size and are properly aligned */
+
+  display: inline-block;
+
+  width: 90px;
+
+  text-align: right;
+
+}
+
+input, textarea {
+
+  /* To make sure that all text fields have the same font settings
+
+     By default, textareas have a monospace font */
+
+  font: 1em sans-serif;
+
+
+
+  /* To give the same size to all text fields */
+
+  width: 300px;
+
+  box-sizing: border-box;
+
+
+
+  /* To harmonize the look & feel of text field border */
+
+  border: 1px solid #999;
+
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+margin-left: .5em;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+
+
+body {
+  margin: 0;
+}
+
+#container {
+  text-align: center;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hidden_form{
+	
+	display: none;
+	
+}
+
+.hidden {
+  display: none;
+}
+
+.shown{
+	
+	
+}
+
+#user-info {
+  border: 1px solid #CCC;
+  clear: both;
+  margin: 0 auto 20px;
+  max-width: 400px;
+  padding: 10px;
+  text-align: left;
+}
+
+#photo-container {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  float: left;
+  height: 80px;
+  margin-right: 10px;
+  width: 80px;
+}
+
+#photo {
+  height: 80px;
+  margin: 0;
+  width: 80px;
+}
+
+@media (max-width: 300px) {
+  #photo-container,
+  #photo {
+    height: 40px;
+    width: 40px;
+  }
+}
